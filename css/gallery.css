@@ -1,0 +1,100 @@
+/* ============================================
+   SURF DEL MAR - Gallery Page Styles
+   ============================================ */
+
+.gallery-page { background: var(--deep); min-height: 100vh; padding-top: 80px; }
+
+.gallery-page-hero {
+  position: relative; height: 45vh; min-height: 320px;
+  display: flex; align-items: center; justify-content: center; overflow: hidden;
+}
+.gallery-page-hero .hero-bg {
+  position: absolute; inset: 0;
+  background-image: url('../assets/images/gallery1.jpg');
+  background-size: cover; background-position: center;
+  filter: brightness(0.35);
+}
+.gallery-page-hero .hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(4,15,28,0.3) 0%, rgba(4,15,28,0.75) 100%);
+}
+.gallery-page-hero .page-title {
+  position: relative; z-index: 5; text-align: center;
+  opacity: 0; animation: fadeUp 1s ease 0.3s forwards;
+}
+.gallery-page-hero .page-title h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(36px, 6vw, 64px); font-weight: 700; color: #fff;
+}
+
+/* Filter tabs */
+.gallery-filters {
+  display: flex; justify-content: center; gap: 8px;
+  padding: 40px 20px 0; flex-wrap: wrap;
+}
+.filter-btn {
+  font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+  color: rgba(255,255,255,0.55); border: 1px solid rgba(255,255,255,0.12);
+  background: transparent; padding: 8px 20px; border-radius: 30px;
+  cursor: pointer; transition: all 0.3s; font-family: 'Poppins', sans-serif;
+}
+.filter-btn:hover, .filter-btn.active {
+  color: var(--navy); background: var(--gold); border-color: var(--gold);
+}
+
+/* Masonry grid */
+.gallery-masonry {
+  columns: 3; column-gap: 14px;
+  padding: 44px 48px 80px;
+  max-width: 1200px; margin: 0 auto;
+}
+.gallery-masonry-item {
+  break-inside: avoid; margin-bottom: 14px;
+  overflow: hidden; border-radius: 6px;
+  cursor: pointer; position: relative;
+}
+.gallery-masonry-item img {
+  width: 100%; display: block;
+  transition: transform 0.5s;
+}
+.gallery-masonry-item:hover img { transform: scale(1.05); }
+.gallery-item-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(transparent 50%, rgba(4,15,28,0.75));
+  opacity: 0; transition: opacity 0.3s;
+  display: flex; align-items: flex-end; padding: 16px;
+}
+.gallery-masonry-item:hover .gallery-item-overlay { opacity: 1; }
+.gallery-item-overlay span {
+  font-size: 11px; letter-spacing: 2px;
+  text-transform: uppercase; color: rgba(255,255,255,0.85);
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed; inset: 0; z-index: 2000;
+  background: rgba(4,15,28,0.96);
+  display: none; align-items: center; justify-content: center;
+  padding: 20px;
+}
+.lightbox.open { display: flex; }
+.lightbox img {
+  max-width: 90vw; max-height: 85vh;
+  object-fit: contain; border-radius: 4px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+}
+.lightbox-close {
+  position: absolute; top: 20px; right: 24px;
+  font-size: 28px; color: rgba(255,255,255,0.7);
+  cursor: pointer; background: none; border: none;
+  transition: color 0.3s;
+}
+.lightbox-close:hover { color: var(--sunset); }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .gallery-masonry { columns: 2; padding: 32px 20px 60px; }
+}
+@media (max-width: 480px) {
+  .gallery-masonry { columns: 1; }
+}

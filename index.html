@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Surf Del Mar Hotel – Sri Lanka</title>
+  <meta name="description" content="Surf Del Mar Hotel – Sri Lanka's premier coastal retreat. Luxury rooms, family rooms, and world-class surf lessons.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ── LOADER ── -->
+<div id="loader">
+  <div class="loader-sun"></div>
+  <div class="loader-bars">
+    <div class="loader-bar"></div>
+    <div class="loader-bar"></div>
+    <div class="loader-bar"></div>
+    <div class="loader-bar"></div>
+    <div class="loader-bar"></div>
+  </div>
+  <div class="loader-name">Surf Del Mar</div>
+  <div class="loader-sub">Hotel · Sri Lanka</div>
+</div>
+
+<!-- ── SOUND BUTTON ── -->
+<button id="soundBtn" onclick="toggleSound()" title="Toggle ocean sounds">🔇</button>
+
+<!-- ── NAVBAR ── -->
+<nav id="mainNav">
+  <a href="index.html" class="nav-logo">Surf <span>Del Mar</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#rooms">Rooms</a></li>
+    <li><a href="#lessons">Surf Lessons</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="https://www.booking.com" target="_blank" class="nav-book">Book Now</a>
+  <button class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about"   onclick="toggleMenu()">About</a>
+  <a href="#rooms"   onclick="toggleMenu()">Rooms</a>
+  <a href="#lessons" onclick="toggleMenu()">Surf Lessons</a>
+  <a href="#gallery" onclick="toggleMenu()">Gallery</a>
+  <a href="#contact" onclick="toggleMenu()">Contact</a>
+  <a href="https://www.booking.com" target="_blank" onclick="toggleMenu()">Book Now</a>
+</div>
+
+<!-- ── HERO ── -->
+<div class="hero" id="home">
+  <!-- Replace hero-bg.jpg in assets/images/ with your hotel photo -->
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <div class="hero-tag">Sri Lanka's Premier Surf Hotel</div>
+    <h1 class="hero-title">
+      Ride the Waves.<br>
+      <span class="italic">Stay the Experience.</span>
+    </h1>
+    <p class="hero-sub">Luxury · Surf · Paradise · Sri Lanka</p>
+    <div class="hero-btns">
+      <a href="https://www.booking.com" target="_blank" class="btn-gold">Book Your Stay</a>
+      <a href="#lessons" class="btn-outline">Explore Surf Lessons</a>
+    </div>
+  </div>
+
+  <!-- Surfer character - replace surfer.png in assets/images/ -->
+  <div class="surfer-hero">
+    <img src="assets/images/surfer.png" alt="Surfer">
+  </div>
+  <div class="surfer-bubble">Welcome to Surf Del Mar! 🤙</div>
+  <div class="surfer-bubble2">Rides, relaxation & luxury await 🌊</div>
+
+  <canvas id="waveCanvas"></canvas>
+
+  <div class="scroll-hint">
+    <p>Scroll to explore</p>
+    <div class="scroll-mouse"></div>
+  </div>
+</div>
+
+<!-- ── SIGNBOARD SECTION - CLEARLY SEPARATED ── -->
+<!-- Replace signboard.jpg in assets/images/ with the hotel sign photo -->
+<div class="signboard-section">
+  <img src="assets/images/signboard.jpeg" alt="Surf Del Mar Hotel Signboard">
+</div>
+
+<!-- ── AMENITIES STRIP ── -->
+<div class="amenities">
+  <div class="amenity"><span class="amenity-icon">🌊</span> Beachside Location</div>
+  <div class="amenity"><span class="amenity-icon">🏄</span> Surf Lessons</div>
+  <div class="amenity"><span class="amenity-icon">❄️</span> Air Conditioning</div>
+  <div class="amenity"><span class="amenity-icon">📶</span> Free WiFi</div>
+  <div class="amenity"><span class="amenity-icon">🍳</span> Breakfast Available</div>
+  <div class="amenity"><span class="amenity-icon">🔒</span> 24/7 Security</div>
+</div>
+
+<!-- ── ABOUT ── -->
+<section class="section" id="about">
+  <div class="about-wrap">
+    <div class="about-imgs reveal-left">
+      <!-- Replace exterior.jpg and courtyard.jpg in assets/images/ -->
+      <img class="about-img-main" src="assets/images/exterior.jpeg" alt="Surf Del Mar Hotel">
+      <img class="about-img-accent" src="assets/images/courtyard.jpeg" alt="Hotel Courtyard">
+      <div class="about-badge">Sri Lanka</div>
+    </div>
+    <div class="about-text reveal-right">
+      <p class="sec-label">About Us</p>
+      <h2 class="sec-title">A Sanctuary <em>by the Sea</em></h2>
+      <div class="gold-bar"></div>
+      <p>Surf Del Mar Hotel is Sri Lanka's premier coastal retreat — where the rhythm of the ocean sets the pace of life. We blend luxury accommodation with world-class surf experiences in one of Asia's most celebrated surf destinations.</p>
+      <p>Whether you're chasing waves at dawn or unwinding in your beautifully appointed room after sunset, Surf Del Mar offers an experience that stays with you long after you leave.</p>
+      <div class="about-stats">
+        <div><div class="stat-num">10+</div><div class="stat-label">Room Types</div></div>
+        <div><div class="stat-num">5★</div><div class="stat-label">Booking.com</div></div>
+        <div><div class="stat-num">365</div><div class="stat-label">Days of Surf</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ROOMS PREVIEW ── -->
+<div class="rooms-bg" id="rooms">
+  <div class="rooms-inner">
+    <div class="reveal">
+      <p class="sec-label">Accommodation</p>
+      <h2 class="sec-title light">Our <em>Rooms</em></h2>
+      <div class="gold-bar"></div>
+    </div>
+    <div class="rooms-grid">
+
+      <!-- Room 1 - Replace room1.jpg in assets/images/ -->
+      <div class="room-card reveal">
+        <img src="assets/images/room1.jpeg" alt="Standard Room">
+        <div class="room-badge-tag">Standard</div>
+        <div class="room-overlay">
+          <div>
+            <div class="room-name">Standard Room</div>
+            <div class="room-desc">Elegant double room with premium bedding, warm lighting & marble en-suite bathroom.</div>
+            <div class="room-tags">
+              <span class="rtag">Double Bed</span>
+              <span class="rtag">Air Con</span>
+              <span class="rtag">WiFi</span>
+            </div>
+            <div class="room-price">On Request / night</div>
+            <button class="room-btn-hover" onclick="window.open('https://www.booking.com','_blank')">Book Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Room 2 - Replace room2.jpg in assets/images/ -->
+      <div class="room-card reveal" style="transition-delay:0.15s">
+        <img src="assets/images/room2.jpeg" alt="Family Room">
+        <div class="room-badge-tag">Family</div>
+        <div class="room-overlay">
+          <div>
+            <div class="room-name">Family Room</div>
+            <div class="room-desc">Spacious room sleeping 4, multiple beds, ceiling fan, air con & private en-suite.</div>
+            <div class="room-tags">
+              <span class="rtag">Sleeps 4</span>
+              <span class="rtag">Air Con</span>
+              <span class="rtag">WiFi</span>
+            </div>
+            <div class="room-price">On Request / night</div>
+            <button class="room-btn-hover" onclick="window.open('https://www.booking.com','_blank')">Book Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Room 3 - Replace room3.jpg in assets/images/ -->
+      <div class="room-card reveal" style="transition-delay:0.3s">
+        <img src="assets/images/room3.jpeg" alt="Deluxe Room">
+        <div class="room-badge-tag">Deluxe</div>
+        <div class="room-overlay">
+          <div>
+            <div class="room-name">Deluxe Room</div>
+            <div class="room-desc">Premium furnishings, heart turn-down service, hot water & exclusive luxury touches.</div>
+            <div class="room-tags">
+              <span class="rtag">King Bed</span>
+              <span class="rtag">Hot Water</span>
+              <span class="rtag">Premium</span>
+            </div>
+            <div class="room-price">On Request / night</div>
+            <button class="room-btn-hover" onclick="window.open('https://www.booking.com','_blank')">Book Now</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ── SURF LESSONS ── -->
+<div class="surf-bg" id="lessons">
+  <div class="floating-board">🏄</div>
+  <div class="surf-inner">
+    <div class="surf-text reveal-left">
+      <p class="sec-label">Activities</p>
+      <h2 class="sec-title light">Learn to <em>Surf</em></h2>
+      <div class="gold-bar"></div>
+      <p>Experience the thrill of Sri Lanka's world-class waves with our certified instructors. From your very first wave to advanced tube riding — we have a lesson for every level.</p>
+      <div class="surf-features">
+        <div class="surf-feat">
+          <span class="surf-feat-icon">🏄</span>
+          <div><h4>Beginner Lessons</h4><p>Safe, fun & confidence-building</p></div>
+        </div>
+        <div class="surf-feat">
+          <span class="surf-feat-icon">🌊</span>
+          <div><h4>Intermediate</h4><p>Improve technique & wave reading</p></div>
+        </div>
+        <div class="surf-feat">
+          <span class="surf-feat-icon">⚡</span>
+          <div><h4>Private Sessions</h4><p>One-on-one coaching</p></div>
+        </div>
+        <div class="surf-feat">
+          <span class="surf-feat-icon">👶</span>
+          <div><h4>Kids Classes</h4><p>Safe lessons for young surfers</p></div>
+        </div>
+      </div>
+      <a href="https://wa.me/94753758832" target="_blank" class="btn-sunset">Book a Lesson</a>
+    </div>
+    <!-- Replace surf.jpg in assets/images/ -->
+    <div class="surf-img reveal-right">
+      <img src="assets/images/surf.jpg" alt="Surf Lessons Sri Lanka">
+      <div class="surf-badge">🏄 Equipment Included</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── GALLERY ── -->
+<div class="gallery-bg" id="gallery">
+  <div class="gallery-inner">
+    <div class="reveal" style="margin-bottom:44px;">
+      <p class="sec-label">Our Space</p>
+      <h2 class="sec-title light">Photo <em>Gallery</em></h2>
+      <div class="gold-bar"></div>
+    </div>
+    <!-- Replace gallery1.jpg - gallery6.jpg in assets/images/ -->
+    <div class="masonry reveal">
+      <div class="masonry-item"><img src="assets/images/gallery1.jpeg" alt="Hotel"><div class="masonry-overlay"><span>Double Room</span></div></div>
+      <div class="masonry-item"><img src="assets/images/gallery2.jpeg" alt="Room"><div class="masonry-overlay"><span>Exterior</span></div></div>
+      <div class="masonry-item"><img src="assets/images/gal3.jpeg" alt="Courtyard"><div class="masonry-overlay"><span>Family Room</span></div></div>
+      <div class="masonry-item"><img src="assets/images/gal7.jpeg" alt="Bathroom"><div class="masonry-overlay"><span>Bathroom</span></div></div>
+      <div class="masonry-item"><img src="assets/images/exterior.jpeg" alt="Exterior"><div class="masonry-overlay"><span>Exterior</span></div></div>
+      <div class="masonry-item"><img src="assets/images/gal6.jpeg" alt="Garden"><div class="masonry-overlay"><span>Deluxe Room</span></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ── TESTIMONIALS ── -->
+<div class="testi-bg">
+  <div class="testi-inner">
+    <div class="reveal" style="text-align:center; margin-bottom:48px;">
+      <p class="sec-label" style="text-align:center;">Guest Reviews</p>
+      <h2 class="sec-title light" style="text-align:center;">What Guests <em>Say</em></h2>
+      <div class="gold-bar" style="margin:14px auto 0;"></div>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Absolutely stunning hotel! The rooms were immaculate and the surf lessons were incredible. Best holiday we've ever had in Sri Lanka!"</p>
+        <div class="testi-author">Sarah M.</div>
+        <div class="testi-from">United Kingdom</div>
+        <div class="booking-tag">📘 Booking.com</div>
+      </div>
+      <div class="testi-card reveal" style="transition-delay:0.15s">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Perfect location, beautiful rooms, and the surf instructors were so patient. Our family had the time of our lives. We'll definitely be back!"</p>
+        <div class="testi-author">Marco & Family</div>
+        <div class="testi-from">Italy</div>
+        <div class="booking-tag">📘 Booking.com</div>
+      </div>
+      <div class="testi-card reveal" style="transition-delay:0.3s">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"The best surf hotel in Sri Lanka. Warm staff, great rooms, and the waves right on your doorstep. A surfer's dream come true!"</p>
+        <div class="testi-author">Jake T.</div>
+        <div class="testi-from">Australia</div>
+        <div class="booking-tag">📘 Booking.com</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── CONTACT CTA ── -->
+<div class="cta-section" id="contact">
+  <div class="cta-inner reveal">
+    <h2>Ready to Ride the Waves?</h2>
+    <p>Book your stay at Surf Del Mar Hotel today. Contact us on WhatsApp for instant replies or reserve directly on Booking.com.</p>
+    <div class="cta-btns">
+      <a href="https://www.booking.com" target="_blank" class="btn-white">Book on Booking.com</a>
+      <a href="https://wa.me/94753758832" target="_blank" class="btn-outline-white">📱 WhatsApp: 0753 758 832</a>
+    </div>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-grid">
+    <div class="f-brand">
+      <div class="f-logo">Surf <span>Del Mar</span></div>
+      <p>Sri Lanka's premier coastal hotel and surf experience. Where the ocean meets luxury.</p>
+    </div>
+    <div class="f-col">
+      <h5>Navigate</h5>
+      <a href="#about">About Us</a>
+      <a href="#rooms">Rooms</a>
+      <a href="#lessons">Surf Lessons</a>
+      <a href="#gallery">Gallery</a>
+    </div>
+    <div class="f-col">
+      <h5>Contact</h5>
+      <a href="tel:0753758832">0753 758 832</a>
+      <a href="mailto:surfdelmarhotel@gmail.com">surfdelmarhotel@gmail.com</a>
+      <a href="https://wa.me/94753758832" target="_blank">WhatsApp</a>
+    </div>
+    <div class="f-col">
+      <h5>Book</h5>
+      <a href="https://www.booking.com" target="_blank">Booking.com</a>
+      <a href="https://wa.me/94753758832" target="_blank">Direct Enquiry</a>
+      <a href="mailto:surfdelmarhotel@gmail.com">Email Us</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Surf Del Mar Hotel · All Rights Reserved</p>
+    <p>surfdelmarhotel.com · Sri Lanka</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
