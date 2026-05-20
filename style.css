@@ -23,6 +23,7 @@ body {
   background: var(--deep);
   color: var(--white);
   overflow-x: hidden;
+  width: 100%
 }
 ::-webkit-scrollbar { width: 3px; }
 ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 2px; }
@@ -147,7 +148,7 @@ nav.scrolled {
 }
 .hero-bg {
   position: absolute; inset: 0;
-  background-image: url('../assets/images/hero-bg.jpg');
+  background-image: url('../assets/images/hero-bg.jpg'); center center/cover no-repeat;
   background-size: cover; background-position: center;
   filter: brightness(0.38);
   animation: heroZoom 16s ease-in-out infinite alternate;
@@ -698,4 +699,322 @@ footer { background: #02080f; border-top: 1px solid rgba(201,168,76,0.1); paddin
   .map-detail-item { border-right: none; border-bottom: 1px solid rgba(201,168,76,0.1); }
   .map-detail-item:last-child { border-bottom: none; }
   .map-embed iframe { height: 280px; }
+}
+
+/* =========================================
+   FINAL MOBILE RESPONSIVE FIX
+   ADD THIS AT VERY BOTTOM OF CSS
+========================================= */
+
+html,
+body{
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* ---------- LARGE TABLETS ---------- */
+@media (max-width: 1024px){
+
+  .hero{
+    min-height: 100vh;
+    padding: 120px 20px 80px;
+  }
+
+  .about-wrap,
+  .surf-inner{
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .rooms-grid{
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  .testi-grid{
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-grid{
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .about-imgs{
+    height: 400px;
+  }
+
+  .surf-img img{
+    height: 350px;
+  }
+}
+
+
+/* ---------- MOBILE ---------- */
+@media (max-width: 768px){
+
+  /* NAVBAR */
+  nav{
+    padding: 14px 20px;
+  }
+
+  nav.scrolled{
+    padding: 12px 20px;
+  }
+
+  .nav-links,
+  .nav-book{
+    display: none;
+  }
+
+  .hamburger{
+    display: flex;
+  }
+
+  .mobile-menu{
+    top: 70px;
+  }
+
+  /* HERO */
+  .hero{
+    min-height: 100vh;
+    padding: 120px 20px 80px;
+    text-align: center;
+  }
+
+  .hero-content{
+    width: 100%;
+  }
+
+  .hero-title{
+    font-size: clamp(42px, 12vw, 70px);
+    line-height: 1.05;
+  }
+
+  .hero-sub{
+    font-size: 11px;
+    letter-spacing: 2px;
+    line-height: 1.7;
+  }
+
+  .hero-btns{
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .hero-btns a,
+  .hero-btns button{
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+  }
+
+  /* SURFER */
+  .surfer-hero{
+    right: -20px;
+    bottom: 40px;
+  }
+
+  .surfer-hero img{
+    width: 100px;
+  }
+
+  .surfer-bubble,
+  .surfer-bubble2{
+    display: none;
+  }
+
+  /* COMMON SECTIONS */
+  .section{
+    padding: 70px 20px;
+  }
+
+  .rooms-inner,
+  .gallery-inner,
+  .surf-inner,
+  .testi-inner,
+  .map-inner{
+    padding: 0 20px;
+  }
+
+  .sec-title{
+    font-size: 34px;
+    line-height: 1.2;
+  }
+
+  /* ABOUT */
+  .about-imgs{
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .about-img-main,
+  .about-img-accent{
+    position: relative;
+    width: 100%;
+    height: 240px;
+  }
+
+  .about-badge{
+    display: none;
+  }
+
+  .about-stats{
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* ROOMS */
+  .rooms-grid{
+    grid-template-columns: 1fr;
+  }
+
+  .room-card img{
+    height: 280px;
+  }
+
+  /* SURF */
+  .surf-inner{
+    grid-template-columns: 1fr;
+  }
+
+  .surf-features{
+    grid-template-columns: 1fr;
+  }
+
+  .surf-img img{
+    height: 300px;
+  }
+
+  .surf-badge{
+    position: relative;
+    left: 0;
+    bottom: 0;
+    margin-top: 20px;
+    display: inline-block;
+  }
+
+  .floating-board{
+    display: none;
+  }
+
+  /* GALLERY */
+  .masonry{
+    columns: 2;
+    column-gap: 10px;
+  }
+
+  /* TESTIMONIALS */
+  .testi-grid{
+    grid-template-columns: 1fr;
+  }
+
+  /* MAP */
+  .map-details{
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .map-embed iframe{
+    height: 320px;
+  }
+
+  /* CTA */
+  .cta-section{
+    padding: 70px 20px;
+  }
+
+  .cta-btns{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cta-btns a,
+  .cta-btns button{
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+  }
+
+  /* FOOTER */
+  .footer-grid{
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .footer-bottom{
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* BUTTONS */
+  .btn-gold,
+  .btn-sunset,
+  .btn-outline,
+  .btn-white,
+  .btn-wa,
+  .btn-outline-white{
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+  }
+
+  /* AMENITIES */
+  .amenities{
+    padding: 20px;
+    gap: 14px;
+    justify-content: flex-start;
+  }
+
+  .amenity{
+    width: calc(50% - 10px);
+    font-size: 10px;
+  }
+
+}
+
+
+/* ---------- SMALL MOBILE ---------- */
+@media (max-width: 480px){
+
+  .hero-title{
+    font-size: 42px;
+  }
+
+  .hero-tag{
+    font-size: 9px;
+    letter-spacing: 3px;
+  }
+
+  .sec-title{
+    font-size: 28px;
+  }
+
+  .masonry{
+    columns: 1;
+  }
+
+  .map-details{
+    grid-template-columns: 1fr;
+  }
+
+  .map-embed iframe{
+    height: 260px;
+  }
+
+  .amenity{
+    width: 100%;
+  }
+
+  .scroll-hint{
+    display: none;
+  }
+
+  #soundBtn{
+    width: 40px;
+    height: 40px;
+    right: 18px;
+    bottom: 18px;
+  }
+
 }
